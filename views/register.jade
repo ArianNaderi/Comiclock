@@ -1,0 +1,73 @@
+extends layout
+
+block content
+  .page_content.entry_pages
+    .login_content
+       .loginbox
+        br
+        #signHeader Join Us!
+        form(action = '/register', method = 'post')
+          .error#reg_error #{error}
+          #username Username:
+          input#inputUserName(type = "text", name = "newusername", placeholder="Enter your username...", pattern="[a-zA-Z0-9_-]+" required)
+          #password Password:
+          input#inputPassword(type = "password", name = "newpassword", placeholder="Enter your password...", pattern="[a-zA-Z0-9_-]+", required)
+          #password Confirm:
+          input#confirmPassword(type = "password", name = "confirmpassword", placeholder="Re-enter your password...", pattern="[a-zA-Z0-9_-]+", required)
+          .sign Sign up as:
+          .buttons
+            input.rb_user_type(type="radio", name = "user_type", value = "contributor", checked)
+            | Contributor
+            input.rb_user_type(type="radio", name = "user_type", value = "viewer")
+            | Viewer
+          .signupbtn
+            button#btnSignUp(type = "submit") Sign Up
+
+  script.
+    var cpw = document.getElementById('confirmPassword');
+    cpw.addEventListener("blur", verifyEmail);
+
+    var username = document.getElementById('inputUserName');
+    username.addEventListener("blur", function(evt){
+      var user = evt.srcElement;
+      if (!user.checkValidity()){
+        alert('not valid')
+        user.setCustomValidity('Your user name cannot contain white spaces, and only letters, numbers, dashes and underscores.')
+        }
+      else {
+        alert('valid');
+        user.setCustomValidity('');
+        }
+    });
+
+
+    function verifyEmail(input) {
+      input = input.srcElement;
+      if (input.value != document.getElementById('inputPassword').value) {
+      // the provided value doesn’t match the primary email address
+        input.setCustomValidity('The two passwords must match.');
+      }
+      else {
+      // input is valid -- reset the error message
+      input.setCustomValidity('');
+      }
+    }
+
+    function validatePassword() {
+      var pw = document.getElementById('inputPassword');
+      var cpw = document.getElementById('confirmPassword');
+      if (pw.value != cpw.value) {
+        cpw.value = '';
+        document.getElementById('reg_error').innerHTML = 'The passwords do not match.';
+        return false;
+        } 
+      else return true;
+    }
+    function setErrors() {
+      if (!document.getElementById("inputUserName").checkValidity())
+        document.getElementById("inputUserName").setCustomValidity('Your user name cannot contain whitespaces.');
+      if (!document.getElementById('inputPassword').checkValidity())
+         document.getElementById('inputPassword').setCustomValidity('Password cannot contain whitepsaces.');
+      if (!document.getElementById('confirmPassword').checkValidity())
+        document.getElementById('confirmPassword').setCustomValidity('Password cannot contain whitepsaces.');
+    }

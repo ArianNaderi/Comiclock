@@ -1,0 +1,14 @@
+include helpers
+extends layout
+
+block content
+  mixin dashboard(is_contributor)
+  .page_content
+    br
+    h2 Hello, #{display_username}!
+    .homePublishedBox
+      #signInHeader Published Comics
+      each c in published_comics
+        mixin comictile(c)
+
+  

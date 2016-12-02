@@ -1,0 +1,49 @@
+//helpers
+script(src="http://code.jquery.com/jquery-1.12.1.min.js")
+
+mixin dashboard(is_contributor)
+  .dash_banner
+    form(action="/search", method="post")
+      .search_bar
+        select#search_selector(name="search_type")
+          option(value="title") Title
+          option(value="author") Author
+        input#search_input(type="text", name="search_params", placeholder = "Search Comics... ")
+        button#search_button(type="submit") Search
+    #dashboard_menu
+      .bmr
+        button.btnMain(type="button", onclick="location.href='/home'") Home
+      if (is_contributor)
+        .bmr
+          button.btnMain(type="button", onclick="location.href='/gallery'") Gallery
+      .bmr
+        button.btnMain(type="button", onclick="location.href='/profile'") profile
+      .bmr
+        button.btnMain(type="button", onclick="location.href='/logout'") Logout 
+
+
+mixin submit_button(type,text,onclick_js)
+  button.btnMain(type=type, onclick=onclick_js) #{text}
+
+mixin frameBox(url)
+  .viewFrameBox
+    img(src=url, height = "300", width = "300")
+
+mixin comictile(comic)
+  .comic_tile.floating_pane_black
+    img.comic_tile_thumbnail(src= 'http://#{host}/frames/' + comic.frames[0])
+    .comic_tile_text
+      a.ocmic_link(href= 'http://#{host}/myComics/' + comic._id ) #{comic.name}
+      .comic_tile_comment #{comic.comment}
+      label Author: 
+        a(href='http://#{host}/profile/' + comic.owner.username + '/' + comic.owner._id) #{comic.owner.username}
+    
+mixin usertile(user)
+  .user_tile.floating_pane_black
+    img.user_tile_thumbnail(src= 'http://#{host}/img/' + user.username)
+    .user_tile_text
+      a(href= 'http://#{host}/profile/' + user.username + '/' + user._id) #{user.username}
+
+mixin WorkspaceframeBox(url)
+  .workspaceFrameBox
+    $(":img(src=url, height = "200")")

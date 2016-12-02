@@ -1,0 +1,16 @@
+include helpers
+extends layout
+
+block content
+  mixin dashboard(is_editor)
+  .page_content
+    .profile_content
+      h2 #{display_username}
+      .Profile_Pic
+        img(src="http://#{pp_path}/#{display_username}")
+      .profilebox 
+        button#btnProfile_Edit(type="submit",  onclick="location.href='/editPage'") Edit
+        #profileBlockHeader
+          h3 about
+        #profile_textcontent 
+          text #{display_content}

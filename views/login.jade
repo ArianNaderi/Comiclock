@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .page_content#login_content
+      .loginbox
+        #signHeader Sign in
+        form(action='/login',method='post')
+          .error #{error}
+          #username Username:
+          input#inputUserName(type="text", name="username", placeholder = "Enter username...", pattern = "[a-Z0-9]+", required) 
+          #password Password:     
+          input#inputPassword(type="password", name="password", placeholder = "Enter password... ", pattern = "[a-zA-Z0-9]+", required)       
+          button#btnSignIn(type="submit") Let's go!
+        #registerlink
+          a(href = "register") Not yet a user? Register here! 
+    
+      

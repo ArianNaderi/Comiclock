@@ -1,0 +1,22 @@
+extends layout
+include helpers
+
+block content
+  mixin dashboard(is_contributor)
+  .page_content
+    h2#signInHeader #{display_username}
+    .published_content
+      .btn_Create_m
+        if(public)
+          form(action= '/Workspace/#{comic_id}' ,method= 'get')
+            button#btnComics(type = "submit") edit
+        button#btnComics(type= "submit", onclick ="location.href='/gallery'" ) return 
+      #titleHeader #{name}
+      #commentHeader #{comment}
+      br
+      .otherFrames_container 
+          if (frame_ids)
+            for frame in frame_ids 
+              mixin frameBox('http://' + host + '/frames/' + frame)  
+              
+

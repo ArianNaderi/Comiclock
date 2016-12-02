@@ -1,0 +1,15 @@
+include helpers
+extends layout
+
+block content
+  mixin dashboard()
+  .page_content
+    form(action="/myComics", method='post')
+      .new_Comic_Box
+        #new_comic_dialog_wrapper
+          input#inputProjectName(type="text", name="projectName", placeholder = "Enter Project Name...", required) 
+          #editComments Comments
+          textarea#commentstxt(rows="9", cols="52", placeholder="Add comments about your comic ...", name="comic_comments")
+          .button_strip
+            button.btnMain(type="button", onclick="location.href='/gallery'") Cancel
+            button.btnMain(type="submit") Save 

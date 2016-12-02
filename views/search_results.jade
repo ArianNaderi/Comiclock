@@ -1,0 +1,17 @@
+include helpers
+extend layout
+
+
+block content
+  mixin dashboard(is_contributor)
+  .page_content
+    #search_results_wrapper
+      #search_results_banner
+        br
+      if (result_type === 'comics')
+          each res in results
+            mixin comictile(res)
+            
+      else
+          each res in results
+            mixin usertile(res) 

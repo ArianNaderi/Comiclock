@@ -1,0 +1,36 @@
+include helpers
+extends layout
+
+
+block content
+  .page_content.entry_profile_page
+  .head_banner2
+    .search_bar
+      input#inputSearch(type="text", name="Search", placeholder = "Search Comics... ", required)
+    .buttons_main
+      .bmr
+        button#btnMain(type="submit", onclick="location.href='/logout'") Logout
+      .bmr
+        button#btnMain(type="submit", onclick="location.href='/gallery'") Gallery
+      .bmr
+        button#btnMain(type="submit", onclick="location.href='/profile'") Profile
+      .bmr
+        button#btnMain(type="submit", onclick="location.href='/home'") Home
+  .profile_content
+    h2#signInHeader #{display_username}
+    .frames_container
+      if (frame_ids)
+        for frame in frame_ids
+          mixin frameBox('http://' + host + '/frames/' + frame)
+    form(action='/myComics/#{comic_id}/frames',method='post',enctype="multipart/form-data", onsubmit='return checkFile(event)')
+                input#frame(type = "file", name = "newFrame", style = {width: '250px', height: '30px'})    
+                button(type="submit") Add Frame
+  script.
+    function checkFile(evt) {
+      var validFile = document.getElementById('frame');
+      if (validFile.files.length == 0){
+        evt.preventDefault();
+        return false;
+        }
+      return true;
+    }

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .page_content.entry_profile_page
+  .head_banner2
+    .search_bar
+      input#inputSearch(type="text", name="Search", placeholder = "Search Comics... ", required)
+    .buttons_main
+      .bmr
+        button#btnMain(type="submit", onclick="location.href='/logout'") Logout
+      .bmr
+        button#btnMain(type="submit", onclick="location.href='/gallery'") Gallery
+      .bmr
+        button#btnMain(type="submit", onclick="location.href='/profile'") Profile
+      .bmr
+        button#btnMain(type="submit", onclick="location.href='/home'") Home
+  .create_Page_Content
+    .frame_Content
+      #frame FRAMES
+      button#btnAdd_Frame(type="submit", onclick="location.href='/create'") Add
+      .frame_box 
+    .preview_Content
+      #preview Preview 
+      .preview_box
+      .btn_Create_m
+        button#btnSaveChanges(type= "submit", onclick ="location.href='/create'" ) Save Changes  
+        button#btnPublish(type= "submit", onclick ="location.href='/create'" ) Publish 
+

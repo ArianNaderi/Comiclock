@@ -1,0 +1,23 @@
+include helpers
+extends layout
+
+
+
+block content
+    mixin dashboard(is_contributor)
+    .page_content
+      h2 #{display_username}'s Comics
+      #add_button
+        button(type="submit", onclick="location.href='/newComic'") +
+      #tabs
+        ul#tab_list
+          li 
+            a(href='#tabs-1') Published
+          li
+            a(href='#tabs-2') In Progress
+        #tabs-1
+            each c in published_comics
+              mixin comictile(c)
+        #tabs-2
+            each c in inprogress_comics
+              mixin comictile(c)

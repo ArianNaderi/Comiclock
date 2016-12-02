@@ -1,0 +1,1255 @@
+/*
+	dar red color code: #e5003e
+*/
+
+@font-face{
+	font-family: Adventure;
+	src: url(Adventure.otf);
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Calibri;
+}
+html{
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	min-width: 1000px;
+	/*position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right:0;
+	z-index: -5
+	*/
+}
+
+#c1,#c2,#c3,h1,h2,h3,h4,h5{
+	font-family: Adventure;
+}
+
+
+#c1{
+	//text-align: center;
+	padding-left: 50px;
+	color: #e5003e;
+	//font-size: 40px;
+	display: inline-block;
+}
+
+#c2{
+	color: purple;
+	text-align: left; 
+	display: inline-block;
+}
+
+#c3{
+	color: #008ae6;
+	text-align: left; 
+	display: inline-block;
+}
+
+#c4{ 
+	color: black;
+	margin-left: 50px;
+	display: inline-block;
+}
+
+h1 {
+	font-family: Adventure;
+	font-size: 40px;
+	color: white;
+	text-align: left; 
+	//background: -webkit-linear-gradient(left, #00ff99, #66feff 60%, #00ff99);
+	padding: 2px;
+	padding-left: 50px;
+	display: inline-block;
+}
+
+h1 {
+	font-size: 40px;
+	//text-align: left; 
+	padding: 2px;
+	display: inline-block;
+}
+
+h2{ 
+	font-size: 30px;
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+h3{
+	font-size: 20px;
+	display: inline-block;
+}
+
+h4{
+	font-size: 10px;
+	display: inline-block;
+}
+
+h5{
+	font-size: 5px;
+	display: inline-block;
+}
+
+ul, ul li {
+	list-style: none;
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:visited{
+	text-decoration: none;
+	color: black;
+}
+
+
+
+/***********************************/
+/*CSS General*/
+#slogan {
+	font-size: 12px;
+	color: #e5003e;
+}
+
+#search_input{
+	background: #00ff99;
+	border-bottom: 3px solid #e5003e;
+	color: #e5003e;
+}
+input {
+	width: 100%;
+	height: 30px;
+	display: block;
+}
+
+input[type=text],input[type=password]{
+	border: none;
+	background: black;
+	border-bottom: #e5003e 2px solid;
+	color: white;
+}
+
+input[type=text]:focus,input[type=password]:focus{
+	outline: none;
+}
+button{
+	text-align: center;
+	background-color: white;
+	color: black;
+	border: none;
+	margin:auto;
+	padding: 5px;
+	display: block;
+}
+
+.page_content{
+	display: table-row;
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/background_light.png"); 
+    background-position: contain;
+    z-index:-1; 
+}
+
+.head_banner{
+	//background: -webkit-linear-gradient(left, #00ff99, #66feff 60%, #00ff99);
+	box-shadow: 0px 3px 2px black;
+	margin: 0px;
+	padding: 0px;
+	background-color: #00ff99;
+	display: table-row;
+}
+
+.dash_banner{
+	box-shadow: 0 4px 4px black;
+	height: 40px;
+	background-color: #00ff99;
+	z-index: 2;
+	padding-bottom: 5px;
+	display: table-row;
+	vertical-align: top;
+}
+
+.dash_banner form{
+	width: auto;
+	display: inline-block;
+}
+
+.search_bar{
+	display: inline;	
+	width: auto;
+	background-color: transparent;
+}
+
+#search_input {
+	display: inline-block;
+	width: 300px;
+	margin-left: 5px;
+}
+
+#search_results_wrapper{
+	width: 90%;
+	margin: auto;
+
+}
+.buttons_main{
+	float:right;
+}
+
+
+.floating_pane_black {
+	background: black;
+	color: white;
+	box-shadow: 0px 5px 5px gray;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+
+.floating_pane_black li a {
+	color: white;
+}
+
+#dashboard_menu {
+	float:right;
+	margin-right: 30px;
+}
+
+#dashboard_menu .bmr{
+	display: inline-block;
+	padding-bottom: 5px;
+	background: none;
+}
+
+#dashboard_menu .bmr .btnMain{
+	background: none;
+	color: black;
+}
+
+#search_selector{
+	display: inline;
+	width: 100px;
+	background: transparent;
+	color: #e5003e;
+	margin-left: 5px;
+	outline: none;
+	font-size: 20px;
+	border:none;
+	font-weight: bold;
+}
+
+#search_button{
+	background:none;
+	display: inline;
+	color: #e5003e;
+	font-size: 20px;
+	border: 1px solid #e5003e;
+	margin-left: 5px;
+	font-weight: bold;
+}
+
+.btnMain{
+	text-align: center;
+	background: black;
+	color: white;
+	font-size: 25px;
+	min-width: 70px;
+	font-family: Adventure;
+	height: auto;
+	border-bottom: 5px solid transparent;
+}
+
+.btnMain:hover{
+	border-bottom: 5px solid #e5003e;
+}
+
+
+.body_wrapper{
+	display: table;
+	margin: 0 0 -30px;
+	min-height: 100%;
+	width: 100%;
+	padding: 0px;
+	position: relative;
+	background-image: url("../images/comic.jpg");
+}
+
+.body_wrapper::after{
+	height: 30px;
+	content: "";
+	display:block;
+}
+
+.comic_background{
+	//background-image: url("../images/comic.jpg");
+	background-position: center;
+	overflow: hidden;
+}
+
+.comic_tile{
+	margin: auto;
+	height: 100px;
+	min-width: 500px;
+	width: 80%;
+	margin-bottom: 20px;
+}
+
+.comic_tile_text{
+	display: inline-block;
+	margin-left: 30px;
+}
+
+.comic_tile_comment{
+	display: block;
+	width: 400px;
+	overflow: ellipsis;
+	color: white;
+}
+
+.comic_tile_thumbnail{
+	height: 80px;
+	width: auto;
+	vertical-align: top;
+}
+
+.comic_tile a{
+	color: white;
+	font-weight: bold;
+}
+
+.user_tile {
+	width: 150px;
+	height:150px;
+	display: inline-block;
+	border-radius: 50%;
+	margin: 20px;
+}
+
+.user_tile_thumbnail{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	display: block;
+	margin:auto;
+}
+
+.user_tile_text {
+	text-align: center;
+	display: block;
+	color: white;
+}
+
+.user_tile_text a{
+	color: white;
+	font-family: Adventure;
+}
+.footer{
+	/*
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	*/
+	height: 30px;
+	background-color: #00ff99;
+	text-align: center;
+}
+
+#creators{
+	font-family: Adventure;
+}
+
+/**********************************************************/
+/*CSS Login Page*/
+#login_content{
+	background:url("../images/comic_closeup.jpg");
+	background-position: center;
+}
+.loginbox {
+  display: block;
+  margin: auto;
+  margin-top: 10%;
+  width: 60%;
+  min-width: 500px;
+  min-height: 300px;
+  background-color: black;
+  font-size: 35px;
+  color: white;
+  box-shadow: 0px 10px 10px black;
+  position: relative;
+}
+
+#signInHeader{
+	text-align: center;
+	margin: auto;
+	font-size: 40px;
+	display: block;
+	padding-top: 20px;
+	color: black;
+}
+
+
+/*******************************************/
+/*CSS Profile Page*/
+
+.Profile_Pic{
+	margin: auto;
+	margin-top:10px;
+	display: block; 
+    border-radius: 50%; 
+    box-shadow: 0 5px 5px black;
+    height: 250px;  
+    width: 250px;
+    overflow: hidden;
+    //position: absolute;
+}
+
+.Profile_Pic img {
+	height: 100%;
+	margin: -1px 0px 0px -1px;
+}
+
+.Profile_Pic .bmr{
+  	height: 100%;
+    border: none;
+    outline: none;
+    width: auto;
+}
+
+
+.login_content{
+	padding-top: 100px;
+	width: 50%;
+	margin: auto;
+	position:relative;
+}
+
+.profile_content{
+	//padding-top: 50px;
+	padding-bottom: 10px;
+	width: 50%;
+	margin: auto;
+}
+
+
+.loginbox form {
+	margin: auto;
+	width: 300px;
+	margin-top: 20px;
+	position: relative;
+}
+
+.profilebox {
+	margin:auto;
+	margin-top: 20px;
+	padding-left: 8px;
+	display: block;
+	background-color: black; 
+    min-height: 200px;
+    width: 400px;
+    box-shadow: 5px 5px 10px black;
+    color: white;
+}
+
+#btnProfile_Edit {
+	border-radius: none;
+	text-align: center;
+	background: black;
+	color: white;
+	font-size: 15px;
+	width: 60px;
+	margin-bottom: 50px;
+	float: right;
+	font-family: Adventure;
+	position: relative;
+
+}
+
+
+/****************************************************/
+/*CSS Gallery Page*/
+#tab_list{
+	list-style-type: none;
+	list-style: none;
+	padding: 3px 3px 3px 3px;
+	border: 2px solid black;
+	width: 250px;
+	height: 100%;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#tab_list ul {
+	width: auto;
+}
+#tab_list li{
+	display: inline-block;
+	padding: 2px 20px 2px 20px;
+	font-size: 18px;
+	width: auto;
+}
+
+#tab_list li a{
+	text-decoration: none;
+}
+
+.ui-state-default a{
+	color: black;
+}
+#tab_list li a:hover{
+	text-decoration: none;
+	color: red;
+}
+
+.ui-state-active a{
+	color: red;
+}
+
+.comic_list{
+	margin-left:none;
+}
+.comic_list a {
+	text-decoration: none;
+	font-size: 16px;
+}
+
+#add_button{
+	position: fixed;
+	top: 140px;
+	right: 50px;
+}
+
+#add_button:hover, #add_button button:hover{
+	cursor: pointer;
+}
+
+#add_button button{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: #00ff99;
+	font-size: 20px;
+	font-weight: bold;
+	box-shadow: 0px 3px 3px black;
+}
+.button_strip::after{
+	clear:both;
+	height: 0px;
+	content: ".";
+}
+
+.button_strip button{
+	display: inline-block;
+	margin-left: auto;
+	float:right;
+}
+.galleryBox{
+	position: relative;
+    display: block; 
+    max-height: 550px; 
+    
+}
+
+.galleryPublishedBox{
+	float: none;
+	display: block;
+    height: 500px;
+    width: 35%;
+    background-color: black;
+    left: 1.5cm; 
+    margin-left: 2%; 
+    overflow: auto; 
+}
+
+.galleryInProgressBox{
+	position: relative;
+	float: none;
+	display: block;
+	height: 500px; 
+	width: 35%;
+	background-color: black;
+    bottom: 13.22cm; 
+    left: 14.1cm; 
+    overflow: auto; 
+	/*margin-right: 65%; */
+	
+	
+}
+
+/*************/
+/*?????????????????*/
+
+#profileBlockHeader{
+	margin-left: 165px;
+	font-size: 30px;
+	padding-top:10px;
+}
+
+#profile_textcontent{
+	height: 100%;
+	width: 80%;
+	margin:auto;
+}
+
+
+#createComicHeader{
+    text-align: center; 
+    margin: auto; 
+    font-size: 20px; 
+    display: block; 
+    background-color: black; 
+    width: 100px; 
+    bottom: 10cm; 
+}
+#username {
+	display: block;
+	font-family: Adventure;
+	margin-right: 175px;
+	font-size: 18px;
+	color: black;
+	width: 100%;
+}
+
+#registerlink{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	margin: auto;
+	width: 100%;
+	text-align:center;
+}
+
+#registerlink a{
+	font-size: 10px;
+	color: white;
+		text-decoration: none;
+}
+
+
+#password {
+	display: block;
+	font-family: Adventure;
+	margin-right: 175px;
+	font-size: 18px;
+	color: black;
+	width: 100%;
+}
+
+
+
+#btnSignIn,#btnSignUp{
+	border-radius: none;
+	background: black;
+	color: white;
+	font-size: 20px;
+	width: 80px;
+	padding: 5 0;
+	margin-top: 30px;
+	font-family: Adventure;
+}
+
+
+.signupblock {
+  display:block;
+  margin-left: 500px;
+  margin-top: 20px;
+  width: 300px;	
+  height: 425px;
+  padding: 60px;
+  border: 5px solid #ffff66;
+  border-radius: 10px;
+  background-color: #ffff99;
+  font-size: 35px;
+  text-align: center;
+}
+
+.newusername {
+	display: block;
+	margin-right: 175px;
+	margin-bottom: -10px;
+	font-size: 18px;
+	color: black;
+
+}
+
+.newpassword {
+	display: block;
+	margin-right: 175px;
+	margin-bottom: -10px;
+	margin-top: 20px;
+	font-size: 18px;
+	color: black;
+
+}
+
+.confirmpassword{
+	display: block;
+	margin-right: 175px;
+	margin-bottom: -10px;
+	margin-top: 20px;
+	font-size: 18px;
+	color: black;
+}
+
+.signupbtn {
+	display: block;
+	margin-top: 20px;
+	font-size:  18px; 
+}
+
+
+.buttons{
+	font-size: 12px;
+	padding-top: 10px;
+}
+
+.rb_user_type{
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	margin-left: 20%;
+
+}
+
+.sign {
+	font-size: 18px;
+	margin-top: 35px;  
+}
+
+.join {
+	font-size: 27px;
+	font-family: fantasy;
+	color: ##595959;
+	font-weight: bold;
+	margin-left: 620px;
+	margin-top: 20px;
+	margin-bottom: -10px;
+	
+}
+/* Edit Profile Page */
+.entry_profile_page{
+    background-image: url("../images/background_light.png"); 
+    background-position: center;
+    z-index:-1; 
+}
+#editPageHeader{
+	text-align: center;
+	margin: auto;
+	font-size: 40px;
+	display: block;
+	padding-top: 20px;
+	color: black;
+}
+.top_header_edit_profile_page{
+    padding-top: 10px; 
+    width: 50%; 
+    margin: auto; 
+    padding-bottom: 0.5cm; 
+    color: white; 
+}
+.editMainFrame{
+    display: block; 
+    margin: auto;  
+    margin-bottom: 30px; 
+    min-height: 460px; 
+    min-width: 650px; 
+    background-color: black; 
+    color: white; 
+    box-shadow: 10px 10px 5px black; 
+    width: 10px;
+    position: relative;
+}
+
+.edit_page_left {
+	height: 250px;   
+    width: 250px;
+    float: left;
+}
+.profilePicBox{
+    display: block;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+.chooseProfilePic{
+    display: inline-block; 
+    border: none; 
+    background-color: none; 
+    position: absolute;
+    left: 1.5cm; 
+    bottom: 2.7cm; 
+}
+
+#profile_content_textarea{
+	margin-top: 20px;
+}
+
+#edit_profile_pick{
+	height: 100%;
+}
+
+.editTextArea{
+    display: block; 
+    border: none;
+    position: absolute;  
+    margin-left: 300px;
+    margin-top:-100px;
+}
+.saveChangesBox{
+    display: block; 
+    position: absolute; 
+    bottom: 0.7cm;
+    left: 12cm 
+}
+#saveButton{
+	border-radius: none;
+	background: black;
+	color: white;
+	font-size: 20px;
+	width: 80px;
+	padding: 5 0;
+    bottom: 0; 
+	font-family: Adventure;
+}
+
+#signHeader{
+	text-align: center;
+	margin: auto;
+	font-size: 40px;
+	display: block;
+	padding-top: 20px;
+	color: white;
+}
+
+#saveButton:hover{
+	color: orange;
+}
+
+#btnSave{
+	float: left;
+	color: black;
+	background: #e5003e;
+}
+
+.userAccountEdit{
+    display: block; 
+    border: none; 
+    float: right;
+	margin-left: 20px;
+}
+
+.error {
+	font-size: 10px;
+	color: red;
+}
+
+.frame_buttons{
+	margin: auto;
+	width: 100px;
+}
+
+#buttonLeft{
+	float:left;
+	border-radius: 50%;
+	border-style:solid;
+	border-color:black;
+	background: #00ff99;
+}
+
+#buttonRight{
+	float:right;
+	border-radius: 50%;
+	border-style:solid;
+	border-color:black;
+	background: #00ff99;
+}
+
+#buttonDelete{
+	float:middle;
+	border-style:solid;
+	border-color:black;
+	background: #00ff99;
+}
+
+/* Create Page */
+.create_Page_Content{
+	position: relative;
+	margin-left: 200px;
+	color: white; 
+	font-size: 30px; 
+	font-family: Adventure; 
+}
+
+.frame{
+
+}
+
+.frames_container {
+	float: left;
+	margin-left: -10%;
+	z-index: 200;
+	position: relative;
+    display: block; 
+	width: 1400px;
+	height: 700px;
+	background-color: none; 
+	border-color: none;
+	overflow-x: auto;
+	//margin-top: -40px;
+}
+
+.otherFrames_container{
+	margin-left: 10%;
+    position: relative;
+    display: block; 
+	width: 100%;
+	height: 700px;
+	background-color: none; 
+	border-color: black;
+	overflow: auto;
+	margin-top: -20px;
+}
+
+.viewFrameBox{
+	display:inline-block;
+	margin: 5%;
+}
+
+.publicFrames_container{
+    position: relative; 
+    display: block; 
+    width: 250px; 
+    height: 490px; 
+    background-color: black; 
+    overflow: auto; 
+    left: 13cm; 
+}
+
+.preview_Content {
+	float: right;
+	display: block; 
+	margin-top: 40px;
+	margin-right: 200px;
+	position: relative;
+}
+
+#btnAdd_Frame{
+	border-radius: none;
+	text-align: center;
+	background: black;
+	color: white;
+	font-size: 15px;
+	width: 75px;
+	height: 40px;
+	font-family: Adventure;
+	/*margin-left: 325px;*/
+	position: relative;
+    bottom: 1.4cm; 
+    right: 7cm; 
+
+}
+
+#frame {
+	float: none;
+	/*margin-right: 220px;*/
+	color: black;
+	//margin-right: -20px; 
+	font-size: 18px;
+	font-family: Adventure; 
+    
+}
+
+.btn_Create_m {
+	float: right;
+	margin-top: 2%; 
+	margin-right: 2%;
+	//position: fixed;
+}
+
+.editing_content {
+
+}
+
+.comment_container {
+	float: center;
+	
+}
+
+#editprojname {
+	background: none;
+	float: center;
+	margin-top: 35px;
+	width: 45%;
+	height: 35px;
+	font-size: 30px;
+	
+}
+
+.editprojname_m {
+	display: block;
+}
+
+
+#btnDelete {
+	//display: inline-block;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 10px;
+	background: #00ff99;
+	color: black;
+	font-size: 20px;
+	width: 120px;
+	height: 50px;
+	font-family: Adventure;
+}
+
+#btnComics{
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 10%;
+	background: #00ff99;
+	color: black;
+	font-size: 20px;
+	width: 120px;
+	height: 50px;
+	font-family: Adventure;
+}
+
+#btnReturn {
+	//display: inline-block;
+	border-radius: 10%;
+	text-align: center;
+	//margin-top: 250px;
+	//margin-right: 370px;
+	float: right;
+	//margin-bottom: 200px;
+	background: purple;
+	color: white;
+	font-size: 20px;
+	width: 120px;
+	height: 50px;
+	font-family: Adventure;
+
+
+}
+
+/*
+.preview_box {
+	display: block; 
+	width: 400px;
+	height: 400px;
+	background-color: black; 
+	margin-top: 40px;
+
+}
+
+
+
+#preview {
+	float: right;
+	margin-right: 150px;
+	color: white; 
+	font-size: 30px;
+	font-family: Adventure;
+} */
+
+/* Create New Comic Page */ 
+
+.new_Comic_Box {
+	padding: 10px;
+	display: block; 
+	width: 600px;
+	height: 100%;
+	background-color: black; 
+	margin:auto;
+	margin-top: 70px;
+	overflow: auto;
+}
+
+#new_comic_dialog_wrapper{
+	width: 90%;
+	overflow-y:auto;
+	margin: auto;
+}
+
+#inputProjectName {
+	margin-top: 30px;
+	color: white;
+	font-size: 20px;
+}
+
+#commentHeader{
+	color: black;
+	text-align: center;
+	font-size: 30px;
+
+}
+
+#commentHeader1 {
+	color: black;
+	text-align: left;
+}
+
+#titleHeader{
+	font-size: 50px;
+	font-family:adventure;
+	color: black;
+	text-align: center;
+}
+
+#editComments {
+	color: white;
+	margin-top: 40px; 
+	margin-left: 30px;
+	font-size: 20px;
+}
+
+#commentstxt {
+	margin-top: 25px;
+	font-size: 15px;
+	width: 99%;
+
+}
+
+#btnNewComic {
+	display: inline-block;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 10px;
+	background: #0000b3;
+	color: white;
+	font-size: 20px;
+	width: 100px;
+	height: 50px;
+	font-family: Adventure;
+	margin-right: 130px; 
+}
+
+#display_comment {
+	color: white;
+	font-size: 15px;
+}
+
+#comicName {
+	color: #85e0e0;
+	font-size: 30px;
+}
+
+#comicName:hover{
+	color:blue;
+}
+
+#comic_list {
+	margin-top: 30px; 
+	margin-left: 70px;
+	 
+}
+
+.published_content{
+	display: block;
+	min-width: 50%;
+	min-height: 50px;
+	margin: 0 auto;
+	position:fixed;
+	position: relative;
+}
+
+/*Home page update */ 
+.homepage_container {
+	position: relative;
+	width: 300px;
+	background-color: black; 
+	overflow: auto;
+	margin: auto;
+}
+
+.homePublishedBox{
+	width: 80%;
+	margin: auto;
+}
+
+#homeComicName {
+	color: #85e0e0;
+	font-size: 30px;
+}
+
+#homeComicName:hover{
+	color: blue;
+}
+
+/* Khris added this part*/
+.comicDisplay{
+    display: block; 
+    background-color: black; 
+    width: 900px; 
+    position: relative; 
+    margin: auto; 
+    box-shadow: 10px 10px 5px black; 
+
+}
+
+.comicTable{
+    display: table; 
+    border-spacing: 60px 20px; 
+    border-color: white; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 30px; 
+}
+.comicTableRow{
+    display: table-row;   
+}
+.comicTableData{
+    display: table-cell;
+    position: relative; 
+}
+img{ 
+    border: 1px double #021a40; 
+    //height: 249px; 
+    //width: 250px; 
+}
+.comicPageButton{
+    margin: auto; 
+}
+#btnComicPageReturn{
+    display: block; 
+    text-align: center; 
+    font-family: Adventure; 
+    width: 120px; 
+    height: 50px; 
+    background: #0000b3; 
+    color: white; 
+    margin: auto; 
+    margin-bottom: 20px; 
+}
+
+.comic_container {
+	position: relative;
+	width: 400px;
+	height: 535px;
+	background-color: black; 
+	border-color: black;
+	overflow: auto;
+	margin-top: -20px;
+
+}
+

@@ -1,0 +1,72 @@
+include helpers
+extends layout
+
+script(src="http://code.jquery.com/jquery-1.12.1.min.js")
+
+block content
+  mixin dashboard()
+  .page_content
+    .create_Page_Content 
+      br
+      .btn_Create_m
+        form(action= '/return/#{comic_id}' ,method= 'get')
+          button#btnDelete(type= "submit") return 
+        if(mine)
+          form(action= '/deletecomic/#{comic_id}' ,method= 'get')
+            button#btnDelete(type = "submit") delete
+          if(published)  
+            form(action = '/unpublishcomic/#{comic_id}', method = 'post') 
+              button#btnDelete(type = "submit") unpublish
+          else
+            form(action = '/publishcomic/#{comic_id}', method = 'post') 
+              button#btnDelete(type = "submit") publish 
+          if(private)
+            form(action = '/publiccomic/#{comic_id}', method = 'post') 
+              button#btnDelete(type = "submit") make public
+          else    
+            form(action = '/privatecomic/#{comic_id}', method = 'post') 
+              button#btnDelete() make private
+      .editing_content
+        .editprojname_m
+          form(action = '/editprojectname/#{comic_id}', method = 'post')
+            input#editprojname(type="text", name="projectName", placeholder = "#{name}") 
+            button#btnSave(type = "submit") Save 
+        br
+        #commentHeader1 #{comment}
+        .comment_container  
+          form(action = '/editcomment/#{comic_id}', method = 'post')
+            textarea(rows="9", cols="52", placeholder= "change comic comments..", name="comic_comments") 
+            button#btnSave(type = "submit") Save 
+        br
+        form(action='/myComics/#{comic_id}/frames',method='post',enctype="multipart/form-data", onsubmit='return checkFile(event)') 
+                  input#frame(type = "file", name = "newFrame", style = {width: '250px', height: '30px', })    
+                  button#btnAdd_Frame(type="submit") Add Frame
+      .frames_container 
+        if (frame_ids)
+          for frame in frame_ids
+            .viewFrameBox
+              mixin frameBox('http://' + host + '/frames/' + frame)
+              .frame_buttons
+                //form(action = '/swapleft/#{comic_id}/' + frame, method = 'get') 
+                //  button#buttonLeft(type = "submit") <
+                //form(action = '/swapright/:comic_id/' + frame, method = 'get')
+                //  button#buttonRight(type = "submit") > 
+                form(action = '/deleteframe/#{comic_id}/' + frame, method = 'get')
+                  button#buttonDelete(type = "submit") Delete 
+
+  script.
+    function checkFile(evt) {
+      var validFile = document.getElementById('frame');
+      if (validFile.files.length == 0){
+        evt.preventDefault();
+        return false;
+        }
+      return true;
+    }
+
+ 
+
+
+
+
+  

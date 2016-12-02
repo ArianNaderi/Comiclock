@@ -1,0 +1,29 @@
+extends layout
+include helpers
+
+block content
+  mixin dashboard()  
+  .page_content
+    h2#editPageHeader Edit Profile Page
+    .editMainFrame
+        .edit_page_left
+            form(action='/updateProfile',method='post',enctype="multipart/form-data")
+                .profilePicBox
+                    img#edit_profile_pic(src="http://#{pp_path}/#{display_username}" height="249", width="249")
+                input#inputUserName(type = "file", name = "profilePicture", style = {width: '250px', height: '30px'})    
+                button.btnMain(type="submit") Upload
+        .userAccountEdit
+            br
+            h3#usernameHeader #{display_username}
+            br
+            form(action = '/editpage', method = 'post')
+                textarea#profile_content_textarea(rows="9" cols="52" placeholder="Edit yourself..."  name="profile_content") #{display_content}
+                button.btnMain(type="submit") Save Changes
+        
+    
+//#username Username:
+            input#inputUserName(type = "text", name = "newusername", style = {width: '250px', height: '30px'}, placeholder="Enter your username...")         
+   
+     
+      
+   
